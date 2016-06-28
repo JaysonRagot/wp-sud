@@ -1,6 +1,12 @@
+#coded by a 15 years old script kiddie :p
+#Learn to code, not to copy :)
+#Video Demo: https://youtu.be/KYtFpwV0x3w
+#https://github.com/skidiekhan/wp-sud
+#Salam to all muslim brothers :)
+
 import requests, re
 print("==============================")
-print("[+]WP~SUD v.10")
+print("[+] WP~SUD v.10")
 print("[+] Shell Uploader & Defacer")
 print("[~] Coded by Skidie khan")
 print("[+] github.com/skidiekhan/ ")
